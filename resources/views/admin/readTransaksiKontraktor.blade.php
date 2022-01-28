@@ -4,8 +4,9 @@
             <th width="80px">#</th>
             <th width="200px">Nama Kontraktor</th>
             <th width="150px">Perusahaan</th>
-            <th width="200px">Penanggung Jawab</th>
-            <th width="200px">Nama Barang</th>
+            <th width="150px">Penanggung Jawab</th>
+            <th width="150px">Nama Barang</th>
+            <th width="150px">Qty</th>
             <th width="200px">Tanggal Pinjam</th>
             <th width="200px">Tanggal Kembali</th>
             <th>Act</th>
@@ -20,6 +21,7 @@
                 <th>{{ $item->perusahaan }}</th>
                 <th>{{ $item->penanggung_jawab }}</th>
                 <th>{{ $item->nama_barang }}</th>
+                <th>{{ $item->qty }}</th>
                 <th>{{ $item->tgl_pinjam }}</th>
                 <th>
                     @if ($item->tgl_kembali != null)

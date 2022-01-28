@@ -17,7 +17,7 @@ class CreateTransaksiKaryawansTable extends Migration
             $table->id();
             $table->bigInteger('nik_karyawan');
             $table->bigInteger('id_barang');
-            $table->timestamp('tgl_pinjam');
+            $table->dateTime('tgl_pinjam')->useCurrent();
             $table->dateTime('tgl_kembali')->nullable();
             $table->timestamps();
             $table->dateTime('deleted_at')->nullable();

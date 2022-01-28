@@ -102,6 +102,7 @@ class HomeController extends Controller
             TransaksiKaryawan::create([
                 'nik_karyawan' => $a[$i]->nik,
                 'id_barang' => $a[$i]->id_barang,
+                'tgl_pinjam' => Carbon::now(),
             ]);
              }
             DB::table('karyawans')
@@ -143,9 +144,10 @@ class HomeController extends Controller
 
     public function updateKaryawanKembali(Request $request){
         $data = DB::table('transaksi_karyawans')
-            ->where('nik_karyawan', $request->nik)
+            ->where('nik_karyawan', $request->nik)->where('tgl_kembali', NULL)
             ->update([
                 'tgl_kembali' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ]);
         $data2 = DB::table('karyawans')->where('nik_karyawan', $request->nik)->update(['status_peminjaman' => '0']);
         if($data && $data2){
@@ -181,6 +183,8 @@ class HomeController extends Controller
                 'perusahaan' => $a[$i]->perusahaan,
                 'penanggung_jawab' => $a[$i]->penanggung_jawab,
                 'id_barang' => $a[$i]->id_barang,
+                'qty' => $a[$i]->qty,
+                'tgl_pinjam' => now(),
                 // 'qty' => $a[$i]->qty,
             ]);
              }

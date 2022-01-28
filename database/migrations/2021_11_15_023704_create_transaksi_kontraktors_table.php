@@ -19,7 +19,8 @@ class CreateTransaksiKontraktorsTable extends Migration
             $table->string('perusahaan');
             $table->string('penanggung_jawab');
             $table->bigInteger('id_barang');
-            $table->timestamp('tgl_pinjam');
+            $table->bigInteger('qty')->nullable();
+            $table->dateTime('tgl_pinjam')->useCurrent();
             $table->dateTime('tgl_kembali')->nullable();
             $table->timestamps();
             $table->dateTime('deleted_at')->nullable();

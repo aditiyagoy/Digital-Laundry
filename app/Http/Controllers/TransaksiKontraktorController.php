@@ -83,6 +83,7 @@ class TransaksiKontraktorController extends Controller
                 'perusahaan' => $request->perusahaan,
                 'penanggung_jawab' => $request->penanggung_jawab,
                 'id_barang' => $request->id_barang,
+                'tgl_pinjam' => Carbon::now(),
             ]);
         }
     }

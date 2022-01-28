@@ -16,6 +16,7 @@ class TransaksiKontraktor extends Model
         'perusahaan',
         'penanggung_jawab',
         'id_barang',
+        'qty',
     ];
 
 }

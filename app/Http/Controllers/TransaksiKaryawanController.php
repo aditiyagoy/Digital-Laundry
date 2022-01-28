@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Barang;
 use App\Models\Lokasi;
 use App\Exports\TransaksiKaryawansExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
@@ -78,6 +79,7 @@ class TransaksiKaryawanController extends Controller
             TransaksiKaryawan::create([
                 'nik_karyawan' => $request->nik_karyawan,
                 'id_barang' => $request->id_barang,
+                'tgl_pinjam' => now(),
             ]);
         }
     }
