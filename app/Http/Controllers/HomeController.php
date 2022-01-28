@@ -184,7 +184,6 @@ class HomeController extends Controller
                 'penanggung_jawab' => $a[$i]->penanggung_jawab,
                 'id_barang' => $a[$i]->id_barang,
                 'qty' => $a[$i]->qty,
-                'tgl_pinjam' => now(),
                 // 'qty' => $a[$i]->qty,
             ]);
              }
